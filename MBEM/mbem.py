@@ -38,4 +38,7 @@ for i in range(df.shape[0]):
         if df['ontology_entry'][i] == "NULL":
             df['relevant'][i] = '0'
             # print(token, token.lemma, token.lemma_)
+
+
+df = df.loc[lambda df: df['relevant'] == 1]
 df.to_csv('../outputs/final_output.csv')
